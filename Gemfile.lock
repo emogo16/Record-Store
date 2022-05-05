@@ -32,6 +32,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rb-readline (0.5.5)
     regexp_parser (2.3.1)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
@@ -68,6 +69,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   pry
+  rb-readline
   rspec
   sinatra
   sinatra-contrib

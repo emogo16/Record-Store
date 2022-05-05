@@ -25,7 +25,7 @@ describe('#Album') do
   end
 
   describe('#==') do
-    it("is the same ablum if it has the same attributes as another album") do
+    it("is the same album if it has the same attributes as another album") do
       album = Album.new('Blue', nil)
       album2 = Album.new('Blue', nil)
       expect(album).to(eq(album2))
@@ -81,7 +81,7 @@ describe('#Album') do
       album2.save
       album3 = Album.new('Giant Steps', nil)
       album3.save
-      expect(Album.search("giANT steps")).to(eq(album))
+      expect(Album.search("Giant Steps")).to(eq(album))
       #CHANGED FROM LOWERCASE
     end
   end

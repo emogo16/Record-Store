@@ -3,7 +3,21 @@ require('sinatra/reloader')
 require('./lib/album')
 require('pry')
 require('./lib/song')
+# require('rb-readline')
 also_reload('lib/**/*.rb')
+
+get('/results') do
+  # @album = Album.search(params[:album_name])
+  erb(:search_results)
+end
+
+post('/results') do
+  name = params[:search]
+  # album = Album.new(name, nil)
+  # album.save()
+  @albums =  Album.search(name)
+  erb(:search_results)
+end
 
 get('/') do
   @albums = Album.all
@@ -123,4 +137,3 @@ get('/custom_route') do
   "We can even create custom routes, but we should only do this when needed."
 end
 
-get('/')

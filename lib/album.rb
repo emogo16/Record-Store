@@ -47,9 +47,11 @@ class Album
   end
 
   def self.search(str)
-    
-    al = @@albums.find { |album| album[1].name.downcase == str.downcase }
-    al[1]
+    # @@albums.find_all { |album| album[1].name.downcase == str.downcase }
+     search_results = []
+    al = @@albums.find_all { |album| album[1].name.downcase == str.downcase }
+      
+    search_results.push(al[1])
     
 
   end
